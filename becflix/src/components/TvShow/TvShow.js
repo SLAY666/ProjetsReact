@@ -1,23 +1,25 @@
-import React from 'react';
+import React from "react";
 import Col from "react-bootstrap/Col";
-import showImage from '../../img/lesinvincibles.jpg'; 
+import showImage from "../../img/lesinvincibles.jpg";
 
 let image = {
-  src : showImage,
-  alt : 'Les invincibles',
-  title : 'Les invicibles'
-}
+  src: showImage,
+  alt: "Les invincibles",
+  title: "Les invicibles",
+};
 
-export class TvShow extends React.Component{
+export class TvShow extends React.Component {
   render() {
+    console.log(this.props.nom);
     return (
       <Col xs lg="2">
-        <img src={image.src}
-           alt = {image.alt}
-           title = {image.title}
-           className = "img-fluid"
+        <img
+          src={image.src}
+          alt={image.alt}
+          title={image.title}
+          className="img-fluid"
         />
       </Col>
-      )
+    );
   }
 }

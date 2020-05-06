@@ -1,7 +1,8 @@
 import React from "react";
 
-class MonPremierComponent extends React.Component {
+export class MonPremierComponent extends React.Component {
   render() {
+    console.log(this.props);
     return (
       <div>
         <h1>BOO YA</h1>
@@ -10,5 +11,3 @@ class MonPremierComponent extends React.Component {
     );
   }
 }
-
-export default MonPremierComponent;
