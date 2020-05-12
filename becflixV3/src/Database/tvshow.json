@@ -1,0 +1,32 @@
+[
+    {
+    src: require("../../img/Suspense/lesinvincibles.jpg"),
+    alt: "Les invincibles",
+    title: "Les Invincibles",
+    }
+  {
+    src: require("../../img/Suspense/19-2.jpg"),
+    alt: "19-2",
+    title: "19-2",
+  }
+  {
+    src: require("../../img/Suspense/district31.jpg"),
+    alt: "District 31",
+    title: "District 31",
+  },
+  {
+    src: require("../../img/Suspense/fugueuse.jpg"),
+    alt: "Fugueuse",
+    title: "Fugueuse",
+  },
+  {
+    src: require("../../img/Suspense/unite9.jpg"),
+    alt: "Unite 9",
+    title: "Unite 9",
+  },
+  {
+    src: require("../../img/Suspense/serienoire.jpg"),
+    alt: "serienoire",
+    title: "serienoire",
+  },
+]
