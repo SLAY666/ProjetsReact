@@ -1,5 +1,6 @@
 import React from "react";
 import Row from "react-bootstrap/Row";
+import './Categorie.css';
 import { TvShow } from "../TvShow/TvShow";
 
 const tabSuspense = [
@@ -69,9 +70,11 @@ const tabAmericaine = [
 ];
 
 export class Categorie extends React.Component {
-  handleClick() {
-    console.log(this);
-  }
+  // handleHover(e) {
+  //   //e représente le Tvshow sur qui le hover est vrai
+  //   console.log(e);
+  //   //e.setStyle({ opacity: 0.5 });
+  // }
 
   render() {
     return (
@@ -92,12 +95,12 @@ export class Categorie extends React.Component {
           src={element.src}
           alt={element.alt}
           title={element.title}
-          onClick={this.handleClick}
+          //onHover={this.handleHover}
         ></TvShow>
       ));
     } else if (this.props.nom === "Humour") {
       return (
-        //Première métode
+        //Première métode, si on avait 10 000 séries, ça prendrait 10 000 lignes...
         <>
           <TvShow src={require("../../img/Humour/lanceEtCompte.jpg")} />
           <TvShow src={require("../../img/Humour/lapetitevie.jpg")} />
@@ -108,24 +111,15 @@ export class Categorie extends React.Component {
         </>
       );
     } else if (this.props.nom === "Séries américaines") {
-      return (
-        <>
-          <TvShow
-            src={require("../../img/Series americaines/betterCallSaul.jpg")}
-          >
-            <h4>Better Call Saul</h4>
-          </TvShow>
-          <TvShow
-            src={require("../../img/Series americaines/breakingbad.jpg")}
-          />
-          <TvShow src={require("../../img/Series americaines/dexter.jpg")} />
-          <TvShow src={require("../../img/Series americaines/got.jpg")} />
-          <TvShow
-            src={require("../../img/Series americaines/mandalorian.jpg")}
-          />
-          <TvShow src={require("../../img/Series americaines/vikings.jpg")} />
-        </>
-      );
+      return tabAmericaine.map((element, i) => (
+        <TvShow
+          key={"américaine" + i}
+          src={element.src}
+          alt={element.alt}
+          title={element.title}
+          //onHover={this.handleHover}
+        ></TvShow>
+      ));
     }
   }
 }
