@@ -5,6 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col"; 
 import {Catalogue} from '../Catalogue/Catalogue'
 import {Connexion} from '../Connexion/Connexion'
+import {Deconnexion} from '../Deconnexion/Deconnexion'
 
 export class Accueil extends React.Component {
   constructor(props) {
@@ -21,7 +22,17 @@ export class Accueil extends React.Component {
   gererConnexion(){
     if(this.state.connecter){
       return (
-        <Catalogue />
+        <Container fluid>
+          <Row>
+            <Col>
+              <img src={logo} alt="BecFlix" width="100px"/>
+            </Col>
+            <Col>
+              <Deconnexion onClick={this.verifierConnexion} />
+            </Col>
+          </Row>
+          <Catalogue />
+        </Container>  
       )
     }
     else{
@@ -32,14 +43,7 @@ export class Accueil extends React.Component {
   }
   render() {
     return (
-      <Container fluid>
-          <Row>
-            <Col>
-              <img src={logo} alt="BecFlix" width="100px"/>
-            </Col>
-        </Row>
-        {this.gererConnexion()}
-    </Container>
+        this.gererConnexion()
     );
   }
 }
