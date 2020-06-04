@@ -6,6 +6,7 @@ import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 import { Client } from "./Client";
+import { AjouterClient } from "./AjouterClient";
 
 const liste = [
   {
@@ -75,9 +76,12 @@ export class Bottin extends React.Component {
   constructor(props) {
     super(props);
     this.state = {rechercher:"",
-                  listeClients : liste};
+                  listeClients : liste,
+                   ajouterClient : false};
     this.Rechercher = this.Rechercher.bind(this);
     this.Effacer = this.Effacer.bind(this);
+    this.Ajouter = this.Ajouter.bind(this);
+    this.AjouterClientHandle = this.AjouterClientHandle.bind(this);
   }
   Rechercher(){
     let nom = document.getElementById("inputRechercher").value;
@@ -87,36 +91,48 @@ export class Bottin extends React.Component {
     document.getElementById("inputRechercher").value = "";
     this.setState({rechercher:""});
   }
+  Ajouter(){
+    this.setState({ajouterClient:!this.state.ajouterClient});
+  }
+  AjouterClientHandle(nouveauClient){
+    let l = this.state.listeClients;
+    l.push(nouveauClient);
+    this.setState({listeClients : l});
+  }
   render() {
-    return (
-    
-      <Container fluid>
-        <Row>
-        <Form>
-        <InputGroup className="mb-3">
-          <FormControl
-            id="inputRechercher"
-            placeholder="Rechercher"
-            aria-label="Rechercher"
-            aria-describedby="Rechercher"
-            onChange={this.Rechercher}
-          />
-          <InputGroup.Append>
-            <Button variant="outline-secondary" onClick={this.Rechercher}>Rechercher</Button>
-          </InputGroup.Append>
-          <InputGroup.Append>
-            <Button variant="outline-secondary" onClick={this.Effacer}>Annuler</Button>
-          </InputGroup.Append>
-        </InputGroup>
-  
-</Form>
-        </Row>
-        <Row>
-          <h1>Bottin téléphonique des Simpsons</h1>
-        </Row>
-        <Row>{this.AfficherBottin()}</Row>
-      </Container>
-    );
+      return (
+        <Container fluid>
+          <Row>
+            <Form>
+              <InputGroup className="mb-3">
+                <FormControl
+                  id="inputRechercher"
+                  placeholder="Rechercher"
+                  aria-label="Rechercher"
+                  aria-describedby="Rechercher"
+                  onChange={this.Rechercher}
+                />
+                <InputGroup.Append>
+                  <Button variant="outline-secondary" onClick={this.Rechercher}>Rechercher</Button>
+                </InputGroup.Append>
+                <InputGroup.Append>
+                  <Button variant="outline-secondary" onClick={this.Effacer}>Annuler</Button>
+                </InputGroup.Append>
+                <InputGroup.Append>
+                  <Button variant="outline-secondary" onClick={this.Ajouter}>Ajouter client</Button>
+                </InputGroup.Append>
+              </InputGroup>
+            </Form>
+            {this.state.ajouterClient && <AjouterClient onClick={this.AjouterClientHandle}/>}
+          </Row>
+          <Row>
+            <h1>Bottin téléphonique des Simpsons</h1>
+          </Row>
+          <Row>
+            {this.AfficherBottin()}
+          </Row>
+        </Container>
+      );
   }
 
   AfficherBottin() {
