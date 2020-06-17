@@ -30,11 +30,9 @@ export class PersonnageV4 extends React.Component {
   render() {
     return (
       <div>
-        <ul>
-          {this.state.donneesRecues.map((key) => (
-            <li key={key.name}>{key.name}</li>
-          ))}
-        </ul>
+        {this.state.donneesRecues.map((key) => (
+          <Perso nom={key.name} toutLobjet={key}></Perso>
+        ))}
       </div>
     );
   }

@@ -6,9 +6,11 @@ export class Perso extends React.Component {
   }
 
   render() {
+    console.log(this.props.toutLobjet);
     return (
       <>
-        <h1>nom :</h1>
+        <h1>nom : {this.props.nom}</h1>
+        <h2>Exemple de l'objet : {this.props.toutLobjet.name}</h2>
       </>
     );
   }
