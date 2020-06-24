@@ -1,39 +1,39 @@
 import React from "react";
-import Col from "react-bootstrap/Col";
-import Card from "react-bootstrap/Card";
-import ListGroup from "react-bootstrap/ListGroup";
-import ListGroupItem from "react-bootstrap/ListGroupItem";
+import { Perso } from "./Perso";
 
 export class PersonnageV4 extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {data : []};
+    this.state = { donneesRecues: [] };
   }
 
   //Ajout de la gestion des erreurs
-  async componentDidMount(){
+  async componentDidMount() {
+    let tabTMP = [];
+    for (let i = 1; i <= 10; i++) {
       try {
-        const response = await fetch('https://swapi.dev/api/people/1/');
-        const json = await response.json();
-        this.setState({ data: json });
+        const response = await fetch("https://swapi.dev/api/people/" + i + "/");
+        const reponseDeApi = await response.json();
+        tabTMP.push(reponseDeApi);
+        this.setState({ donneesRecues: tabTMP });
         if (!response.ok) {
+          //Permet d'attraper l'erreur 500 et l'erreur 400
           throw Error(response.statusText);
         }
       } catch (error) {
+        //On gère l'erreur
         console.log(error);
       }
+    }
   }
 
   render() {
-    console.log(this.state.data);
     return (
       <div>
-      <ul>
-        {Object.keys(this.state.data).map(key => (
-          <li key={key}>{key} : {this.state.data[key]}</li>
+        {this.state.donneesRecues.map((key) => (
+          <Perso nom={key.name} toutLobjet={key}></Perso>
         ))}
-      </ul>
-    </div>
+      </div>
     );
   }
 }
