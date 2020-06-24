@@ -1,10 +1,10 @@
 import React from 'react';
-import {PersonnageV4} from './PersonnageV4';
+import {ShortenURL} from './ShortenURL';
 
 function App() {
   return (
     <>
-      <PersonnageV4/>
+      <ShortenURL></ShortenURL>
     </>
   );
 }
