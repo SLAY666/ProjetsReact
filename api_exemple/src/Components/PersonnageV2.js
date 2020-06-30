@@ -20,6 +20,7 @@ export class PersonnageV2 extends React.Component {
     console.log(this.state.data);
     return (
       <div>
+        <h1>Version 2 :</h1>
       <ul>
         {Object.keys(this.state.data).map(key => (
           <li key={key}>{key} : {this.state.data[key]}</li>

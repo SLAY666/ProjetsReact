@@ -30,6 +30,7 @@ export class PersonnageV4 extends React.Component {
   render() {
     return (
       <div>
+        <h1>Version 4 :</h1>
         {this.state.donneesRecues.map((key) => (
           <Perso nom={key.name} toutLobjet={key}></Perso>
         ))}

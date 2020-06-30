@@ -24,6 +24,7 @@ export class PersonnageV3 extends React.Component {
 
     return (
       <div>
+        <h1>Version 3 :</h1>
         <ul>
           {Object.keys(this.state.data).map((key) => (
             <li key={key}>

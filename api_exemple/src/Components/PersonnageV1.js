@@ -1,8 +1,4 @@
 import React from "react";
-import Col from "react-bootstrap/Col";
-import Card from "react-bootstrap/Card";
-import ListGroup from "react-bootstrap/ListGroup";
-import ListGroupItem from "react-bootstrap/ListGroupItem";
 
 export class PersonnageV1 extends React.Component {
   constructor(props) {
@@ -20,6 +16,7 @@ export class PersonnageV1 extends React.Component {
     console.log(this.state.data);
     return (
       <>
+        <h1>Version 1 :</h1>
         <h1>{this.state.data.name}</h1>
         <h1>{this.state.data.height}</h1>
         <h1>{this.state.data.films}</h1>
