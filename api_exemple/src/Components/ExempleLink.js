@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 export class ExempleLink extends React.Component {
   constructor(props) {
@@ -8,9 +8,11 @@ export class ExempleLink extends React.Component {
 
   render() {
     return (
-        <>
-          <Link exact to="/" className="btn btn-primary">Retour à l'accueil</Link>
-        </>
+      <>
+        <Link to="/" className="btn btn-primary">
+          Retour à l'accueil
+        </Link>
+      </>
     );
   }
 }
