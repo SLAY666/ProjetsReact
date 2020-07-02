@@ -15,7 +15,7 @@ export class Perso extends React.Component {
             Ou s'il met la page en favoris...
             On doit donc appeler de nouveau l'API après le clique sur le lien.
         */}      
-        <Link to={"Perso/" + this.props.nom}>
+        <Link to={"Perso/" + this.props.nom + "?id=" + this.props.id}>
           <h1>nom : {this.props.nom}</h1>
         </Link>
         <h2>Exemple de l'objet : {this.props.toutLobjet.name}</h2>
