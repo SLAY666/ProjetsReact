@@ -37,54 +37,15 @@
       ]
     },
     {
-      "id": "test",
-      "name": "test",
-      "picture": "test",
+      "id": "Shany",
+      "name": "Shany",
+      "picture": "https://cdn.bulbagarden.net/upload/b/b8/025Pikachu_LG.png",
       "abilities": [
         {
-          "name": "test"
+          "name": "Tonnerre"
         },
         {
-          "name": "test"
-        }
-      ]
-    },
-    {
-      "id": "Shany Carle",
-      "name": "Shany Carle",
-      "picture": "Test",
-      "abilities": [
-        {
-          "name": "test"
-        },
-        {
-          "name": "test"
-        }
-      ]
-    },
-    {
-      "id": "Shany le Pokémon",
-      "name": "Shany le Pokémon",
-      "picture": "test",
-      "abilities": [
-        {
-          "name": "TEST"
-        },
-        {
-          "name": "TEST"
-        }
-      ]
-    },
-    {
-      "id": "Shany Pokémon",
-      "name": "Shany Pokémon",
-      "picture": "test",
-      "abilities": [
-        {
-          "name": "test"
-        },
-        {
-          "name": "test"
+          "name": "Éclair"
         }
       ]
     }
