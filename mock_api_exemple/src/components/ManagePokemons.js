@@ -2,7 +2,7 @@ import React from "react";
 import { Pokemon } from "./Pokemon";
 
 
-export class Pokemons extends React.Component {
+export class ManagePokemons extends React.Component {
   constructor(props) {
     super(props);
     this.state = { donneesRecues: [] };

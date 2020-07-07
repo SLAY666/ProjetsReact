@@ -1,5 +1,5 @@
 import React from "react";
-import { Pokemons } from "./Pokemons";
+import { ManagePokemons } from "./ManagePokemons";
 import { AjouterPokemon } from "./AjouterPokemon";
 import { PageNotFound } from "./PageNotFound";
 import { Route, Switch, Redirect } from "react-router-dom";
@@ -15,7 +15,7 @@ function App() {
     <>
     <ToastContainer autoClose={3000} hideProgressBar />
       <Switch>
-        <Route path="/" exact component={Pokemons} />
+        <Route path="/" exact component={ManagePokemons} />
         <Route path="/ajouterPokemon" component={AjouterPokemon} />
         <Route component={PageNotFound} />
       </Switch>
