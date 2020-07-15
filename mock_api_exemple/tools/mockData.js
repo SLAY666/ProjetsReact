@@ -1,5 +1,6 @@
 const pokemons = [
   {
+    "id" : 1,
     "name":"Bulbasaur",
     "picture" : "https://cdn.bulbagarden.net/upload/thumb/2/21/001Bulbasaur.png/500px-001Bulbasaur.png",
     "abilities": [
@@ -12,6 +13,7 @@ const pokemons = [
     ],
   },
   {
+    "id" : 2,
     "name":"Pikachu",
     "picture" : "https://cdn.bulbagarden.net/upload/thumb/0/0d/025Pikachu.png/500px-025Pikachu.png",
     "abilities": [
@@ -24,6 +26,7 @@ const pokemons = [
     ],
   },
   {
+    "id" : 3,
     "name":"Charmander",
     "picture" : "https://cdn.bulbagarden.net/upload/thumb/7/73/004Charmander.png/500px-004Charmander.png",
     "abilities": [

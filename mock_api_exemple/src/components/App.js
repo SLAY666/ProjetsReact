@@ -1,12 +1,14 @@
 import React from "react";
 import { ManagePokemons } from "./ManagePokemons";
 import { AjouterPokemon } from "./AjouterPokemon";
+import { FormEditerPokemon } from "./FormEditerPokemon";
 import { PageNotFound } from "./PageNotFound";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { BoutonAjouterPokemon } from "./BoutonAjouterPokemon";
 import { useLocation } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { BoutonRetourAccueil } from "./BoutonRetourAccueil";
 
 function App() {
   let location = useLocation();
@@ -17,9 +19,11 @@ function App() {
       <Switch>
         <Route path="/" exact component={ManagePokemons} />
         <Route path="/ajouterPokemon" component={AjouterPokemon} />
+        <Route path="/Pokemons/:nom" component={FormEditerPokemon} />
         <Route component={PageNotFound} />
       </Switch>
-  {location.pathname != "/ajouterPokemon" && <BoutonAjouterPokemon/> }
+      {(location.pathname != "/ajouterPokemon" && !location.pathname.startsWith("/Pokemons")) && <BoutonAjouterPokemon/> }
+      {(location.pathname != "/") && <BoutonRetourAccueil/> }
       <br></br>
     </>
   );
