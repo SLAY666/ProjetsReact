@@ -1,5 +1,5 @@
 import React from "react";
-import { ManagePokemons } from "./ManagePokemons";
+import  ManagePokemonsHooks  from "./ManagePokemonsHooks";
 import { AjouterPokemon } from "./AjouterPokemon";
 import { FormEditerPokemon } from "./FormEditerPokemon";
 import { PageNotFound } from "./PageNotFound";
@@ -17,7 +17,7 @@ function App() {
     <>
     <ToastContainer autoClose={3000} hideProgressBar />
       <Switch>
-        <Route path="/" exact component={ManagePokemons} />
+        <Route path="/" exact component={ManagePokemonsHooks} />
         <Route path="/ajouterPokemon" component={AjouterPokemon} />
         <Route path="/Pokemons/:nom" component={FormEditerPokemon} />
         <Route component={PageNotFound} />

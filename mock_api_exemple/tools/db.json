@@ -14,6 +14,19 @@
       ]
     },
     {
+      "id": 2,
+      "name": "Pikachu",
+      "picture": "https://cdn.bulbagarden.net/upload/thumb/0/0d/025Pikachu.png/500px-025Pikachu.png",
+      "abilities": [
+        {
+          "name": "Static"
+        },
+        {
+          "name": "Lightning Rod de la mort"
+        }
+      ]
+    },
+    {
       "id": 3,
       "name": "Charmander",
       "picture": "https://cdn.bulbagarden.net/upload/thumb/7/73/004Charmander.png/500px-004Charmander.png",
@@ -23,71 +36,6 @@
         },
         {
           "name": "Solar Power"
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "name": "shany",
-      "picture": "shany",
-      "abilities": [
-        {
-          "name": "shnay"
-        },
-        {
-          "name": "shany"
-        }
-      ]
-    },
-    {
-      "id": 8,
-      "name": "de",
-      "picture": "de",
-      "abilities": [
-        {
-          "name": "fe"
-        },
-        {
-          "name": "fe"
-        }
-      ]
-    },
-    {
-      "id": 9,
-      "name": "de",
-      "picture": "de",
-      "abilities": [
-        {
-          "name": "fe"
-        },
-        {
-          "name": "fe"
-        }
-      ]
-    },
-    {
-      "id": 10,
-      "name": "2",
-      "picture": "3",
-      "abilities": [
-        {
-          "name": "4"
-        },
-        {
-          "name": "5"
-        }
-      ]
-    },
-    {
-      "id": 12,
-      "name": "e",
-      "picture": "e",
-      "abilities": [
-        {
-          "name": "e"
-        },
-        {
-          "name": "e"
         }
       ]
     }
