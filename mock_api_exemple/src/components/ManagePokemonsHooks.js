@@ -7,7 +7,7 @@ function ManagePokemonsHooks() {
   //Ajout de la gestion des erreurs
   useEffect(() => {
     getPokemons();
-  }, donneesRecues); //Si on enlève le second paramètre, on obtient une boucle infinie.
+  }, [donneesRecues.join(",")]); //Si on enlève le second paramètre, on obtient une boucle infinie.
 
   async function getPokemons() {
     try {

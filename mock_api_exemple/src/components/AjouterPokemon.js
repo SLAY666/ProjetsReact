@@ -13,3 +13,5 @@ export class AjouterPokemon extends React.Component {
     );
   }
 }
+
+
