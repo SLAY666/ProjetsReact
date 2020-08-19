@@ -5,21 +5,20 @@ import {toast} from "react-toastify"
 
 function FormEditerPokemonHooks(props){
   const [donneesRecues , setDonneesRecues] = useState({name: '', picture:"", abilities : ["",""] });
-  const [pokemonID , setPokemonID] = useState(2);
+  const [pokemonID , setPokemonID] = useState(props.location.search.substring(4,props.location.search.length));
   const [photos , setPhotos] = useState("");
   //Ajout de la gestion des erreurs
   useEffect(() => {
     getPokemonInfos();
-  }, donneesRecues); //Si on enlève le second paramètre, on obtient une boucle infinie.
+  },[]); //Si on enlève le second paramètre, on obtient une boucle infinie.
 
   //On récupère le Pokemon pour ensuite remplir le formulaire.
   async function getPokemonInfos() {
     try {
-      await setPokemonID(props.location.search.substring(4,props.location.search.length));
+      
       const response = await fetch("http://localhost:3001/pokemons/"+pokemonID);
       const reponseDeApi = await response.json();
       setDonneesRecues(reponseDeApi);
-      console.log(donneesRecues)
       if (!response.ok) {
         throw Error(response.statusText);
       }
@@ -87,7 +86,7 @@ async function removePokemon() {
     const attaque1 = document.getElementById('attaque1').value;
     const attaque2 = document.getElementById('attaque2').value;
 
-    this.editPokemon(nom,photo,attaque1,attaque2);
+    editPokemon(nom,photo,attaque1,attaque2);
   }
 
   function handlePhoto(event){
