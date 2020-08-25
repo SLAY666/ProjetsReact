@@ -1,4 +1,3 @@
-import { openDB } from 'idb';   
 // This optional code is used to register a service worker.
 // register() is not called by default.
 
@@ -53,12 +52,6 @@ export function register(config) {
       }
     });
   }
-  window.addEventListener('activate', function(event) {
-    event.waitUntil(
-      createDB()
-    );
-  });
-
 }
 
 function registerValidSW(swUrl, config) {
@@ -145,22 +138,4 @@ export function unregister() {
         console.error(error.message);
       });
   }
-}
-
-function createDB() {
-  console.log("Create DB");
-  try{
-    openDB('products', 1, function(upgradeDB) {
-      var store = upgradeDB.createObjectStore('beverages', {
-        keyPath: 'id'
-      });
-      store.put({id: 123, name: 'coke', price: 10.99, quantity: 200});
-      store.put({id: 321, name: 'pepsi', price: 8.99, quantity: 100});
-      store.put({id: 222, name: 'water', price: 11.99, quantity: 300});
-    });
-  }
-  catch(error){
-    console.log(error);
-  }
-  
 }

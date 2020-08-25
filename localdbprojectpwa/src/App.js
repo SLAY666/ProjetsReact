@@ -2,7 +2,6 @@ import React from 'react';
 import logo from './img/pwa.png';
 import BoutonInstallPWA from './components/BoutonInstallPWA';
 import DemoJSONLocal from './components/DemoJSONLocal';
-import DemoIndexedBD from './components/DemoIndexedBD';
 import './App.css';
 
 function App() {
@@ -16,7 +15,6 @@ function App() {
         </p>
       </header>
       <DemoJSONLocal/>
-      <DemoIndexedBD/>
     </div>
   );
 }

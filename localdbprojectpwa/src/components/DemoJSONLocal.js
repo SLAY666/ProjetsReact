@@ -1,7 +1,7 @@
 import React from "react";
 
 function DemoJSONLocal() {
-    //test();
+    test();
   return (
     <h1>Liste des pokemons</h1>
   );
