@@ -1,4 +1,4 @@
-import { openDB, deleteDB, wrap, unwrap } from 'idb';   
+import { openDB } from 'idb';   
 // This optional code is used to register a service worker.
 // register() is not called by default.
 
@@ -34,7 +34,7 @@ export function register(config) {
 
     window.addEventListener('load', () => {
       const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
-
+      
       if (isLocalhost) {
         // This is running on localhost. Let's check if a service worker still exists or not.
         checkValidServiceWorker(swUrl, config);
@@ -42,7 +42,6 @@ export function register(config) {
         // Add some additional logging to localhost, pointing developers to the
         // service worker/PWA documentation.
         navigator.serviceWorker.ready.then(() => {
-          createDB();
           console.log(
             'This web app is being served cache-first by a service ' +
               'worker. To learn more, visit https://bit.ly/CRA-PWA'
@@ -54,6 +53,12 @@ export function register(config) {
       }
     });
   }
+  window.addEventListener('activate', function(event) {
+    event.waitUntil(
+      createDB()
+    );
+  });
+
 }
 
 function registerValidSW(swUrl, config) {
@@ -144,12 +149,18 @@ export function unregister() {
 
 function createDB() {
   console.log("Create DB");
-  openDB('products', 1, function(upgradeDB) {
-    var store = upgradeDB.createObjectStore('beverages', {
-      keyPath: 'id'
+  try{
+    openDB('products', 1, function(upgradeDB) {
+      var store = upgradeDB.createObjectStore('beverages', {
+        keyPath: 'id'
+      });
+      store.put({id: 123, name: 'coke', price: 10.99, quantity: 200});
+      store.put({id: 321, name: 'pepsi', price: 8.99, quantity: 100});
+      store.put({id: 222, name: 'water', price: 11.99, quantity: 300});
     });
-    store.put({id: 123, name: 'coke', price: 10.99, quantity: 200});
-    store.put({id: 321, name: 'pepsi', price: 8.99, quantity: 100});
-    store.put({id: 222, name: 'water', price: 11.99, quantity: 300});
-  });
+  }
+  catch(error){
+    console.log(error);
+  }
+  
 }
