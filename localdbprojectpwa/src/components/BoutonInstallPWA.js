@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 
 function BoutonInstallPWA() {
   return (
-    <Button variant="primary" size="lg" block id="butInstall">
+    <Button variant="primary" size="lg" block id="boutonInstall">
       Installer l'application
     </Button>
   );
