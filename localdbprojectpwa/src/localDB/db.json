@@ -1,0 +1,30 @@
+{
+  "pokemons": [
+    {
+      "id": 1,
+      "name": "Bulbasaur",
+      "picture": "https://cdn.bulbagarden.net/upload/thumb/2/21/001Bulbasaur.png/500px-001Bulbasaur.png",
+      "abilities": [
+        {
+          "name": "Overgrow"
+        },
+        {
+          "name": "Chlorophyll"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Pikachu",
+      "picture": "https://cdn.bulbagarden.net/upload/thumb/0/0d/025Pikachu.png/500px-025Pikachu.png",
+      "abilities": [
+        {
+          "name": "Statics"
+        },
+        {
+          "name": "Lightning Rod"
+        }
+      ]
+    }
+  ]
+}

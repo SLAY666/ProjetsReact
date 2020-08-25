@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './img/pwa.png';
 import BoutonInstallPWA from './components/BoutonInstallPWA';
+import Read from './components/read';
 import './App.css';
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
           Hello PWA World!
         </p>
       </header>
-      
+      <Read/>
     </div>
   );
 }
