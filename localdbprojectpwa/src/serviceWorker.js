@@ -20,26 +20,6 @@ const isLocalhost = Boolean(
     )
 );
 
-const CACHE_NAME = 'static-cache-v2';
-
-window.addEventListener('activate', (evt) => {
-   console.log('[ServiceWorker] Activate');
-
-   //Remove previous cached data from disk.
-   evt.waitUntil(
-       caches.keys().then((keyList) => {
-           return Promise.all(keyList.map((key) => {
-               if (key !== CACHE_NAME) {
-                   console.log('[ServiceWorker] Removing old cache', key);
-                   return caches.delete(key);
-               }
-           }));
-       })
-   );
-
-   window.claim();
-});
-
 export function register(config) {
   if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
     // The URL constructor is available in all browsers that support SW.
