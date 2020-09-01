@@ -1,1 +1,1 @@
-export const API = "https://crudcrud.com/api/5da054a8c5cf4211b57c0aa0a9460262/pokemons/";
+export const API = "https://crudcrud.com/api/aa40e05fb50c437097f6218acf80dc8c/pokemons/";
