@@ -1,7 +1,8 @@
 import React from "react";
 import { Form, Button,Image,Container,Row,Col } from "react-bootstrap";
-import {Redirect} from "react-router-dom"
-import {toast} from "react-toastify"
+import {Redirect} from "react-router-dom";
+import {API} from "../constantes";
+import {toast} from "react-toastify";
 
 export class FormAjouterPokemon extends React.Component {
   constructor(props) {
@@ -15,11 +16,10 @@ export class FormAjouterPokemon extends React.Component {
 
   async addPokemon(nom,photo,attaque1, attaque2) { 
     try{ 
-      const newID = await this.getID();
-      const response = await fetch('http://localhost:3001/pokemons/', { 
+      const response = await fetch(API, { 
         method:'POST', 
         headers: {'Content-Type': 'application/json'  }, 
-        body:JSON.stringify({id : newID,
+        body:JSON.stringify({
           name: nom,
           picture: photo,
           abilities: [
@@ -45,25 +45,7 @@ export class FormAjouterPokemon extends React.Component {
       console.log(error); 
    } 
 }
-  //Retourne le prochain ID pour savoir où ajouter
-  async getID() {
-    try {
-      let nextID = 0 
-      const response = await fetch("http://localhost:3001/pokemons");
-      const reponseDeApi = await response.json();
-      for (let i=0;i<reponseDeApi.length;i++){
-        if(reponseDeApi[i].id > nextID){
-            nextID = reponseDeApi[i].id;
-        }
-      }   
-      if (!response.ok) {
-        throw Error(response.statusText);
-      }
-      return nextID+1;
-    } catch (error) {
-      console.log(error);
-    }
-  }
+
 
   handleAdd(event){
     event.preventDefault();

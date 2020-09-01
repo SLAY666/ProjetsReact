@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {API} from "../constantes";
 import { Pokemon } from "./Pokemon";
 
 function ManagePokemonsHooks() {
@@ -11,7 +12,7 @@ function ManagePokemonsHooks() {
 
   async function getPokemons() {
     try {
-      const response = await fetch("http://localhost:3001/pokemons");
+      const response = await fetch(API);
       const reponseDeApi = await response.json();
       setDonneesRecues(reponseDeApi);
       if (!response.ok) {
@@ -26,7 +27,7 @@ function ManagePokemonsHooks() {
     <div>
       <h1>Affichage de la liste de tous les Pokemons</h1>
       {donneesRecues.map((key, i) => (
-        <Pokemon nom={key.name} id={key.id} key={key.name + key.id}></Pokemon>
+        <Pokemon nom={key.name} id={key._id} key={key.name + key._id} urlPhoto={key.picture}></Pokemon>
       ))}
     </div>
   );

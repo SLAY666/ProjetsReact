@@ -1,6 +1,7 @@
 import React , {useState , useEffect} from "react";
 import { Form, Button,Image,Container,Row,Col } from "react-bootstrap";
-import {Redirect} from "react-router-dom"
+import {Redirect} from "react-router-dom";
+import {API} from "../constantes";
 import {toast} from "react-toastify"
 
 function FormEditerPokemonHooks(props){
@@ -16,7 +17,7 @@ function FormEditerPokemonHooks(props){
   async function getPokemonInfos() {
     try {
       
-      const response = await fetch("http://localhost:3001/pokemons/"+pokemonID);
+      const response = await fetch(API + pokemonID);
       const reponseDeApi = await response.json();
       setDonneesRecues(reponseDeApi);
       if (!response.ok) {
@@ -29,10 +30,10 @@ function FormEditerPokemonHooks(props){
 
   async function editPokemon(nom,photo,attaque1, attaque2) { 
     try{ 
-      const response = await fetch('http://localhost:3001/pokemons/'+ pokemonID, { 
+      const response = await fetch(API + pokemonID, { 
         method:'PUT', 
         headers: {'Content-Type': 'application/json'  }, 
-        body:JSON.stringify({id : pokemonID,
+        body:JSON.stringify({
           name: nom,
           picture: photo,
           abilities: [
@@ -46,11 +47,10 @@ function FormEditerPokemonHooks(props){
         }) 
       }); 
       if(response.ok){ 
-        const jsonResponse = await response.json(); 
         props.history.push("/");
         toast.success("Modification du Pokémon " + nom);
 
-        return jsonResponse; 
+        return response; 
       } 
       throw new Error('Request failed!'); 
   } 
@@ -61,15 +61,15 @@ function FormEditerPokemonHooks(props){
 
 async function removePokemon() { 
     try{ 
-    const response = await fetch('http://localhost:3001/pokemons/'+ pokemonID, { 
+    const response = await fetch(API + pokemonID, { 
       method:'delete', 
     }); 
     if(response.ok){ 
-      const jsonResponse = await response.json(); 
+      //const jsonResponse = await response.json(); 
       props.history.push("/");
       toast.error("Supression du Pokémon ");
 
-      return jsonResponse; 
+      return response; 
     } 
     throw new Error('Request failed!'); 
 } 

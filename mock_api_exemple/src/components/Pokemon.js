@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {Card} from "react-bootstrap"
+import {Card,Image} from "react-bootstrap"
 
 export class Pokemon extends React.Component {
   constructor(props) {
@@ -12,8 +12,9 @@ export class Pokemon extends React.Component {
       <>
       <Card>
         <Card.Body>
+          <Image src={this.props.urlPhoto} rounded width="125"/>
           <Link to={"Pokemons/" + this.props.nom + "?id=" + this.props.id}>
-            <h1>nom : {this.props.nom}</h1>
+            <h1>{this.props.nom}</h1>
           </Link>
         </Card.Body>
       </Card>     
