@@ -33,6 +33,8 @@ self.addEventListener('fetch', function(e) {
           }
           console.log('[demoPWA - ServiceWorker] Retrieving from URL...');
           return fetch(e.request).catch(function (e) {
+             let boutonAJouter = document.getElementById("boutonAJouterPokemon");
+             boutonAJouter.classList.add("disabled");
              console.log('Vous êtes déconnectés...');
           });
       })
