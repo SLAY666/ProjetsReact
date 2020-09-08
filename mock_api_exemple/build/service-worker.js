@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "./precache-manifest.11be8ae62ad68a58e91ff99e1f26bdb1.js"
+  "./precache-manifest.c80331d541dc4b60e69fc4b7b0af65b2.js"
 );
 
 self.addEventListener('message', (event) => {
@@ -33,11 +33,12 @@ self.addEventListener('fetch', function(e) {
           }
           console.log('[demoPWA - ServiceWorker] Retrieving from URL...');
           return fetch(e.request).catch(function (e) {
-             alert('You appear to be offline, please try again when back online');
+             console.log('Vous êtes déconnectés...');
           });
       })
   );
 });
+
 
 workbox.core.clientsClaim();
 
